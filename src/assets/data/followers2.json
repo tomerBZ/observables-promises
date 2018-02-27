@@ -1,0 +1,9 @@
+{
+  "followers": [
+    {"userName": "Conan O'Brien", "avatar": "https://pbs.twimg.com/profile_images/730612231021322240/Rl0_QYhL_400x400.jpg", "quote": "When you have my skin, every day is #BurningMan", "likes": 1.12, "following": 564},
+    {"userName": "Nat Geo", "avatar": "https://pbs.twimg.com/profile_images/798176802325794816/25mLqDKA_400x400.jpg", "quote": "All things photography from National Geographic.", "likes": 1.78, "following": 55},
+    {"userName": "Donald J. Trump", "avatar": "https://pbs.twimg.com/profile_images/874276197357596672/kUuht00m_400x400.jpg", "quote": "45th President of the United States of America", "likes": 1.54, "following": 326}
+  ],
+  "is_more": false,
+  "next_page": null
+}

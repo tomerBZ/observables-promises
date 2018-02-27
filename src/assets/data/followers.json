@@ -1,0 +1,9 @@
+{
+  "followers": [
+    {"userName": "LeBron James", "avatar": "https://pbs.twimg.com/profile_images/748603714705952768/-8HcqbKS_bigger.jpg", "quote": "EST. AKRON - ST.V/M Class of '03", "likes": 1.32, "following": 456},
+    {"userName": "President Obama", "avatar": "https://pbs.twimg.com/profile_images/600314410003865600/laIuu4bB.jpg", "quote": "Thank you for everything. My last ask is the same as my first. I'm asking you to believe—not in my ability to create change, but in yours.", "likes": 1.85, "following": 452},
+    {"userName": "NASA", "avatar": "https://pbs.twimg.com/profile_images/188302352/nasalogo_twitter_bigger.jpg", "quote": "Explore the universe and discover our home planet with NASA", "likes": 1.45, "following": 214}
+    ],
+  "is_more": true,
+  "next_page": "http://localhost:4200/assets/data/followers2.json"
+}

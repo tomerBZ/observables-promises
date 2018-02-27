@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+.card {
+  height: 100%;
+  .card-img-top {
+    background-color: #1c94e0;
+    height: 90px;
+  }
+  .card-body {
+    position: relative;
+    padding-bottom: 50px;
+    .avatar {
+      max-width: 73px;
+      max-height: 73px;
+      border: {
+        radius: 50%;
+      }
+      position: absolute;
+      top: -40px;
+    }
+    .card-title {
+      padding-top: 20px;
+    }
+    .buttons {
+      position: absolute;
+      bottom: 20px;
+    }
+  }
+}
