@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../shared/services/http/http.service';
-import { Follower } from '../shared/interfaces/follower';
-import 'rxjs/add/operator/retryWhen';
 import 'rxjs/add/operator/delay';
-import { HttpErrorResponse } from '@angular/common/http';
+import 'rxjs/add/operator/retryWhen';
+import 'rxjs/add/operator/switchMap';
+import { Component, OnInit } from '@angular/core';
+import { Follower } from '../shared/interfaces/follower';
+import { HttpService } from '../shared/services/http/http.service';
 
 
 @Component({
@@ -13,7 +13,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ObservableComponent implements OnInit {
   followers: Follower[];
-  errorMessage: string;
 
   constructor(private _http: HttpService) {
   }
@@ -21,15 +20,17 @@ export class ObservableComponent implements OnInit {
   ngOnInit() {
     this._http.getFollowers()
       .retryWhen((error) => error.delay(5000))
+      .do(data => {
+        if (data.is_more) {
+          this._http.getFollowers(data.next_page).subscribe(newData => {
+            if (this.followers.length) {
+              this.followers = this.followers.concat(newData.followers);
+            }
+          });
+        }
+      })
       .subscribe(response => {
         this.followers = response.followers;
-        if (response.is_more) {
-          do {
-            this._http.getFollowers(response.next_page).subscribe(response => {
-              this.followers = this.followers.concat(response.followers);
-            });
-          } while(!response.is_more)
-        }
       }, error => console.log(error));
   }
 }
